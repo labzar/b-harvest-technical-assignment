@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/b-harvest-front/node_modules
+/b-harvest-front/.pnp
+/b-harvest-front/.pnp.js
+
+# testing
+/b-harvest-front/coverage
+
+# production
+/b-harvest-front/build
+
+# misc
+/b-harvest-front/.DS_Store
+/b-harvest-front/.env.local
+/b-harvest-front/.env.development.local
+/b-harvest-front/.env.test.local
+/b-harvest-front/.env.production.local
+
+/b-harvest-front/npm-debug.log*
+/b-harvest-front/yarn-debug.log*
+/b-harvest-front/yarn-error.log*
