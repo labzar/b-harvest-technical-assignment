@@ -16,6 +16,14 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="accountInformations" element={<AccountInformations />} />
         <Route path="transaction" element={<Transaction />} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
