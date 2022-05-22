@@ -1,8 +1,20 @@
+import {
+  Box,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import "./App.css";
 import { Copyright } from "./commun/Copyright";
+import SendIcon from "@mui/icons-material/Send";
+import { useNavigate } from "react-router-dom";
 
-function App() {
+export const App = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="content-container">
@@ -13,17 +25,38 @@ function App() {
               borderBottom: "solid 1px",
               paddingBottom: "1rem",
             }}
-          >
-            <Link to="/transaction">Transaction</Link> |{" "}
-            <Link to="/accountInformations">Account Informations</Link>
-          </nav>
+          ></nav>
         </div>
+        <Box display="flex" alignItems="center" justifyContent="center">
+          <List
+            sx={{ width: "100%", maxWidth: 360, bgcolor: "#eee" }}
+            component="nav"
+            aria-labelledby="nested-list-subheader"
+            subheader={
+              <ListSubheader component="div" id="nested-list-subheader">
+                Menu :
+              </ListSubheader>
+            }
+          >
+            <ListItemButton onClick={() => navigate("/transaction")}>
+              <ListItemIcon>
+                <SendIcon />
+              </ListItemIcon>
+              <ListItemText primary="Transaction" />
+            </ListItemButton>
+            <ListItemButton onClick={() => navigate("/accountInformations")}>
+              <ListItemIcon>
+                <SendIcon />
+              </ListItemIcon>
+              <ListItemText primary="Account Informations" />
+            </ListItemButton>
+          </List>
+        </Box>
       </div>
+
       <footer className="footer--pin">
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </footer>
     </>
   );
-}
-
-export default App;
+};
