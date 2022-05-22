@@ -23,7 +23,9 @@ public class TransactionService {
 
   public boolean makeTransfer(TransactionDTO transactionDTO) {
     Optional<List<Account>> accountList = accountRepository.findByCustomerId(transactionDTO.getCustomerID());
-    if (accountList.isPresent()) {
+    if (accountList.isPresent() &&
+            accountList.get().size() > 0
+    ) {
       Account currentAccount = accountList.get().get(0);
       Account newAccount = new Account(
               currentAccount.getName(),
@@ -33,7 +35,7 @@ public class TransactionService {
               UUID.randomUUID().toString());
 
       if (transactionDTO.getInitialCredit() > 0) {
-        Transaction transaction = new Transaction(transactionDTO.getInitialCredit(),  newAccount);
+        Transaction transaction = new Transaction(transactionDTO.getInitialCredit(), newAccount);
         newAccount.setTransactions(Arrays.asList(transaction));
       }
 
