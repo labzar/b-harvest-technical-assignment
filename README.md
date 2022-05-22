@@ -1,7 +1,7 @@
 # b-harvest-technical-assignment
 
-b-harvest bank is bank application, mobile-ready, offline-storage compatible,
-ReactJS-powered HTML5 Markdown editor.
+b-harvest is a web application, mobile-ready, offline-storage compatible,
+ReactJS-powered HTML5 Markdown editor and Spring boot.
 
 ## Assessment
 
